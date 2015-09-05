@@ -1,0 +1,23 @@
+pcommon: &common
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username:
+  password:
+
+development:
+  <<: *common
+  database: counting_words_development
+  host: localhost
+  port: 5432
+
+test: &test
+  <<: *common
+  database: counting_words_test
+  host: localhost
+  port: 5432
+
+production:
+  <<: *common
+  url: <%= ENV['DATABASE_URL'] %>
+  database: counting_words_production

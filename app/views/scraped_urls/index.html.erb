@@ -1,0 +1,25 @@
+<h1>Listing scraped_urls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Most Common Word</th>
+      <th>Number of times appeared</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scraped_urls.each do |scraped_url| %>
+      <tr>
+        <td><%= link_to scraped_url.url, scraped_url %></td>
+        <td><%= scraped_url.highest_word_count[0] %></td>
+        <td><%= scraped_url.highest_word_count[1] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scraped URL', new_scraped_url_path %>

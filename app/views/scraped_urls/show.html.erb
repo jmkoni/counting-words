@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @scraped_url.url %>
+</p>
+
+<p>
+  <strong>Word count:</strong>
+  <%= @scraped_url.word_count %>
+</p>
+
+<%= link_to 'Edit', edit_scraped_url_path(@scraped_url) %> |
+<%= link_to 'Back', scraped_urls_path %>

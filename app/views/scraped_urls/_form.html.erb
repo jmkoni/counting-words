@@ -1,0 +1,25 @@
+<%= form_for(@scraped_url) do |f| %>
+  <% if @scraped_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scraped_url.errors.count, "error") %> prohibited this scraped_url from being saved:</h2>
+
+      <ul>
+      <% @scraped_url.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :word_count %><br>
+    <%= f.text_field :word_count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
