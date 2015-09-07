@@ -1,54 +1,35 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
-STAGES = %w(
-  development
-  production
-  test
-).freeze
+source "https://rubygems.org"
 
-NON_PROD_STAGES = (STAGES - ['production']).freeze
+gem "rails", "~> 4"
 
-gem 'rails', '4.1.8'
+gem "coffee-rails"
+gem "jquery-rails"
+gem 'jquery-ui-rails', '~> 4.2.1'
+gem "pg"
+gem "puma"
+gem "sass-rails"
+gem "uglifier"
 
-group(*STAGES) do
-  gem 'coffee-rails'
-  gem 'jquery-rails'
-  gem 'pg'
-  gem 'puma'
-  gem 'sass-rails', '~> 4.0.3'
-  gem 'sdoc', '~> 0.4.0', group: :doc
-  gem 'spring',        group: :development
-  gem 'turbolinks'
-  gem 'uglifier'
-end
-
-group(*NON_PROD_STAGES) do
-  gem 'faker'
-  gem 'factory_girl_rails', '~> 4.5.0', require: false
-end
-
-group :development do
-  gem 'annotate', '~> 2.6.6'
-end
-
-group :development, :test do
-  gem 'awesome_print'
-  gem 'database_cleaner'
-  gem 'derailed'
-  gem 'guard-rspec', require: false
+group :test, :development do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "database_cleaner", git: "git@github.com:bmabey/database_cleaner.git"
+  gem "ruby_css_lint"
   gem 'pry'
   gem 'pry-awesome_print'
   gem 'pry-rails'
-  gem 'rspec-console'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem "selenium-webdriver"
   gem 'simplecov', require: false
 end
 
 group :test do
   gem 'rspec-its'
   gem 'rspec-collection_matchers'
+  gem 'shoulda-matchers'
 end
 
 group :production do

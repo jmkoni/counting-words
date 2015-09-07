@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Url:</strong>
+<p class="url">
+  <h3>URL:</h3>
   <%= @scraped_url.url %>
 </p>
-
-<p>
-  <strong>Word count:</strong>
-  <%= @scraped_url.word_count %>
+<br>
+<p class="word-count">
+  <h3>Word count:</h3>
+  <% @scraped_url.sorted_highest_words.each do |k,v| %>
+    <p><b><%= k %>:</b> <%= v %></p>
+  <% end %>
 </p>
-
-<%= link_to 'Edit', edit_scraped_url_path(@scraped_url) %> |
-<%= link_to 'Back', scraped_urls_path %>
