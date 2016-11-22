@@ -1,8 +1,5 @@
 # counting-words
 
-###Deployed at:
-https://safe-tor-1782.herokuapp.com/
-
 ###Running locally:
 
 Clone application then:
