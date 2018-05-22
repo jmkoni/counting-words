@@ -1,13 +1,10 @@
-source 'https://rubygems.org'
-ruby '2.2.2'
-
 source "https://rubygems.org"
 
 gem "rails", "~> 4"
 
 gem "coffee-rails"
 gem "jquery-rails"
-gem 'jquery-ui-rails', '~> 4.2.1'
+gem 'jquery-ui-rails'
 gem "pg"
 gem "puma"
 gem "sass-rails"
@@ -33,5 +30,5 @@ group :test do
 end
 
 group :production do
-  gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor'
 end
